@@ -1,0 +1,9 @@
+# primeiro_projeto.py
+
+def main():
+    print("Olá, mundo! Bem-vindo ao meu primeiro projeto no GitHub.")
+    nome = input("Qual é o seu nome? ")
+    print(f"Prazer em te conhecer, {nome}!")
+
+if __name__ == "__main__":
+    main()
