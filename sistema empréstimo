@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h> 
+
+int main() {
+    // Declaração das variáveis
+    float renda, valorEmprestimo, entrada;
+    char historicoCredito;
+    int estavel;
+
+    // Entrada de dados
+    printf("Digite sua renda mensal: R$ ");
+    scanf("%f", &renda);
+
+    printf("Digite o valor do emprestimo desejado: R$ ");
+    scanf("%f", &valorEmprestimo);
+
+    printf("Digite o valor da entrada: R$ ");
+    scanf("%f", &entrada);
+
+    printf("Historico de credito (B - bom / R - ruim): ");
+    scanf(" %c", &historicoCredito); 
+    historicoCredito = toupper(historicoCredito); // trata 'b' como 'B'
+
+    printf("Estabilidade no emprego (1 - Sim / 0 - Nao): ");
+    scanf("%d", &estavel);
+
+    // Critério 1: o valor do empréstimo deve ser no máximo 30% da renda
+    int criterio1 = valorEmprestimo <= (0.3 * renda);
+
+    // Critério 2: histórico de crédito deve ser bom
+    int criterio2 = historicoCredito == 'B';
+
+    // Critério 3: o cliente deve ter estabilidade e entrada >= 1000
+    int criterio3 = estavel == 1 && entrada >= 1000;
+
+    // Análise da aprovação
+    if (criterio1 && criterio2 && criterio3) {
+        printf("\nParabens! Seu emprestimo foi aprovado.\n");
+    } else {
+        printf("\nInfelizmente, seu emprestimo foi negado.\n");
+
+        // Explicação do motivo
+        if (!criterio1) {
+            printf("- O valor do emprestimo excede 30%% da sua renda.\n");
+        }
+
+        if (!criterio2) {
+            printf("- Seu historico de credito nao e favoravel.\n");
+        }
+
+        if (!criterio3) {
+            printf("- Falta estabilidade no emprego ou a entrada e insuficiente.\n");
+        }
+    }
+
+    return 0;
+}
