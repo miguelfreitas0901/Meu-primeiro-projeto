@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    //DADOS DO CLIENTE//
+    char cliente[50] = "joão da silva";
+    int codigo_os = 123;
+    int quantidade_fotos = 50;
+    float valor_total = 75.00;
+    int prazo_entrega = 3;
+    char forma_pagamento[20] = "cartão de crédito";
+
+    // cálculo do preço por foto//
+    float preco_por_foto = valor_total / quantidade_fotos;
+
+    // exibição dos dados //
+    printf("=== ordem de  Serviço ===\n");
+    printf("cliente........: %s\n", cliente);
+    printf("Código da OS.....: %05d\n", codigo_os);
+    printf("Quantidade Fotos.: %d\n", quantidade_fotos);
+    printf("Valor Total......: R$ %.2f\n", valor_total);
+    printf("Preço por foto...: R$ %.2f\n", preco_por_foto);
+    printf("Pagamento........: %s\n", forma_pagamento);
+    printf("Prazo de entrega.: %d dias úteis\n", prazo_entrega);
+    printf("========================\n");
+}
