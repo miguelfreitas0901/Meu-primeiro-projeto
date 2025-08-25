@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <string.h>
+#include <ctype.h>
+
+
+
+
+int main(){
+    // declarar e inicializar a primeira matriz //
+    int matrizA [4] [4] = {
+    {1, 2, 3, 4},
+    {5, 6, 7, 8},
+    {9, 10, 11, 12},
+    {13, 14, 15, 16}
+    };
+    // declarar a segunda matriz //
+    int matrizB[4] [4];
+    // realizar o calculo e armazenar a segunda matriz //
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4 ; j++){
+            matrizB[i][j] = matrizA[i][j] * 2;
+        }
+        
+    }
+    // exibir a primeira matriz
+    printf("Matriz A:\n");
+    for (int i = 0; i < 4; i++) {
+       for (int j = 0; j < 4; j++) {
+           printf("%d ", matrizA[i][j]);
+        }
+        printf("\n");
+    }
+    // exibir a segunda matriz //
+    printf("\nMatriz B (resiltado do cálculo:\n");
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4; j++) {
+            printf("%d ", matrizB[i][j]);
+        }
+        printf("\n");
+    }
+     return 0;
+ }
